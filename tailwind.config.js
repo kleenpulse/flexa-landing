@@ -37,7 +37,17 @@ export default {
       },
       screens: {
         "wide": "1440px"
-      }
+      },
+      keyframes: {
+        showBtn: {
+          '100%': {
+            top: '0.5rem'
+          }
+        }
+      },
+      animation: {
+        showBtn: 'showBtn 1s ease-in-out forwards',
+      },
     },
   },
   plugins: [],

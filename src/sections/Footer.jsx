@@ -6,6 +6,7 @@ const Footer = () => {
 	const inViewRef = useRef(null);
 
 	const isViewing = useInView(inViewRef);
+	console.log(isViewing, "inViewRef");
 
 	return (
 		<footer className="max-container">

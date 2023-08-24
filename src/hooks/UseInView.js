@@ -19,5 +19,6 @@ export const useInView = (ref) => {
         };
     }, [ref, observer]);
 
+
     return isViewing;
 };

@@ -105,7 +105,15 @@
 }
 
 #scrollToTop {
-	animation: bounce 2s infinite;
+	animation: bounce 2s 100ms ease 5;
+}
+
+#scrollToTop:hover {
+	animation-play-state: paused;
+}
+#scrollToTop:hover .btn-pill {
+	box-shadow: 0 0 20px 10px #dd3502;
+	transition: box-shadow 0.5s;
 }
 
 @keyframes bounce {
@@ -121,6 +129,21 @@
 	}
 	60% {
 		transform: translateY(-10px);
+	}
+}
+
+.btn-pill {
+	top: -5rem;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.49);
+
+	animation: showBar 1s 400ms ease forwards;
+}
+.btn-pill:active {
+	scale: 0.9;
+}
+@keyframes showBar {
+	100% {
+		top: 0;
 	}
 }
 

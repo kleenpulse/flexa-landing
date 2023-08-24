@@ -14,8 +14,10 @@ import { useInView } from "./hooks/UseInView";
 
 const App = () => {
 	const heroRef = useRef(null);
-	const isHeroRef = useInView(heroRef);
+	let isHeroRef = true;
+	isHeroRef = useInView(heroRef);
 	console.log("Hero showing", isHeroRef);
+
 	return (
 		<main className="relative">
 			<Nav />
@@ -47,20 +49,20 @@ const App = () => {
 			<section className="bg-black padding-x padding-t pb-8">
 				<Footer />
 			</section>
-			{!isHeroRef ? (
+			{isHeroRef ? (
+				<></>
+			) : (
 				<div
-					className="fixed h-10 w-full flex justify-center z-[99999] top-2 items-center"
+					className="fixed h-10 w-full flex justify-center z-[99999] top-4 items-center"
 					id="scrollToTop"
 				>
 					<a
 						href="#hero"
-						className="w-fit font-palanquin font-bold p-2 rounded-full bg-coral-red text-white"
+						className="relative w-fit font-palanquin font-bold p-2 rounded-full bg-coral-red text-white btn-pill"
 					>
 						Goto Top
 					</a>
 				</div>
-			) : (
-				<></>
 			)}
 		</main>
 	);
