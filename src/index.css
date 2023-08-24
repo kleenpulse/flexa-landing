@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+@layer components {
+	.max-container {
+		max-width: 1440px;
+		margin: 0 auto;
+	}
+
+	.input {
+		@apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-gray pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-gray max-sm:rounded-full;
+	}
+}
+
+@layer utilities {
+	.padding {
+		@apply sm:px-16 px-8 sm:py-24 py-12;
+	}
+
+	.padding-x {
+		@apply sm:px-16 px-8;
+	}
+
+	.padding-y {
+		@apply sm:py-24 py-12;
+	}
+
+	.padding-l {
+		@apply sm:pl-16 pl-8;
+	}
+
+	.padding-r {
+		@apply sm:pr-16 pr-8;
+	}
+
+	.padding-t {
+		@apply sm:pt-24 pt-12;
+	}
+
+	.padding-b {
+		@apply sm:pb-24 pb-12;
+	}
+
+	.info-text {
+		@apply font-montserrat text-slate-gray text-lg leading-7;
+	}
+}
+
+#mobile-menu {
+	width: 0;
+	animation: show-menu 0.5s forwards;
+}
+
+@keyframes show-menu {
+	from {
+		width: 0;
+	}
+	to {
+		width: 60%;
+	}
+}
+@media (max-width: 650px) {
+	@keyframes show-menu {
+		from {
+			width: 0;
+		}
+		to {
+			width: 80%;
+		}
+	}
+}
+
+@keyframes fadeInLeftToRight {
+	0% {
+		opacity: 0;
+		width: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes glow {
+	50% {
+		box-shadow: 0 0 30px 20px #fff;
+		border-radius: 20px;
+	}
+}
+
+.fade-in-svg {
+	opacity: 0;
+	animation: fadeInLeftToRight 1.2s 200ms ease-in forwards,
+		glow 1.5s 1.2s forwards;
+}
+
+#scrollToTop {
+	animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-20px);
+	}
+	60% {
+		transform: translateY(-10px);
+	}
+}
+
+/* For WebKit-based browsers (Google Chrome, Safari) */
+::-webkit-scrollbar {
+	width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+	background-color: rgb(255, 255, 255); /* Color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background-color: #f15f29; /* Color of the thumb */
+}
+
+/* For Mozilla Firefox */
+/* Note: Firefox currently supports scrollbar-color property for this purpose */
+/* This example assumes Firefox supports the older styling method */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: rgb(255, 255, 255) #f15f29;
+}
+
+::selection {
+	background-color: rgba(241, 94, 41, 0.474);
+	color: white;
+}
+
+::-moz-selection {
+	background-color: rgba(241, 94, 41, 0.474);
+	color: white;
+}
+
+.test-colr {
+	background-color: #f15f29;
+	color: #a6a6a6;
+}
