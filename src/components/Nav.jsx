@@ -9,7 +9,7 @@ const Nav = () => {
 	return (
 		<header className="padding-x py-8 absolute z-10 w-full">
 			<nav className="flex justify-between items-center max-container">
-				<a href="/">
+				<a href="#hero">
 					{/* <img src={headerLogo} width={130} height={29} alt="logo" /> */}
 					<svg width="200" height="60" xmlns="http://www.w3.org/2000/svg">
 						<defs>
