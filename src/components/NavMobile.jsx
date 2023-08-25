@@ -1,3 +1,4 @@
+import { bigShoe1 } from "../assets/images";
 import { navLinks } from "../constants";
 const NavMobile = ({ setIsMobile }) => {
 	return (
@@ -5,7 +6,7 @@ const NavMobile = ({ setIsMobile }) => {
 			className="pt-8 pl-10 !fixed top-0 right-0 z-50 !h-[100vh] bg-coral-red"
 			id="mobile-menu"
 		>
-			<a href="/">
+			<a href="#hero">
 				<svg
 					width="140"
 					height="50"
@@ -34,13 +35,22 @@ const NavMobile = ({ setIsMobile }) => {
 					<li key={link.label} onClick={() => setIsMobile(false)}>
 						<a
 							href={link.href}
-							className="font-palanquin leading-normal text-2xl text-white font-bold "
+							className="font-palanquin leading-normal text-2xl text-white font-bold hover:text-[26px] transition-all"
 						>
 							{link.label}
 						</a>
 					</li>
 				))}
 			</ul>
+			<div className="w-full mt-20 scale-[1.2]">
+				<img
+					src={bigShoe1}
+					alt="shoe"
+					width={610}
+					height={500}
+					className="object-contain "
+				/>
+			</div>
 		</div>
 	);
 };

@@ -7,9 +7,9 @@ const Button = ({
 	animation,
 	fullWidth,
 }) => {
-	const buttonClasses = `flex justify-center items-center gap-2 px-7 py-4 border font-montserrat leading-none rounded-full border-coral-red bg-${bgcolor} text-${
+	const buttonClasses = `flex justify-center items-center gap-2  border font-montserrat leading-none rounded-full border-coral-red bg-${bgcolor} text-${
 		color ? color : "white"
-	} ${size === "large" ? "text-lg" : "text-base"} ${
+	} ${size === "large" ? "text-lg px-7 py-4" : "text-base px-4 py-2"} ${
 		fullWidth && "w-full"
 	} transform transition-all duration-300 ${
 		animation === "slide"

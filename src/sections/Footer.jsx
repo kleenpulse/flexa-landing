@@ -1,8 +1,12 @@
 import { useRef } from "react";
 import { footerLinks, socialMedia } from "../constants";
 import { useInView } from "../hooks/UseInView";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+	const navigate = useNavigate();
+	const handleClick = () => navigate("/terms");
+
 	const inViewRef = useRef(null);
 
 	const isViewing = useInView(inViewRef);
@@ -12,7 +16,7 @@ const Footer = () => {
 		<footer className="max-container">
 			<div className="flex justify-between items-start gap-20 flex-wrap max-lg:flex-col">
 				<div className="flex flex-col items-start ">
-					<a href="/" ref={inViewRef}>
+					<a href="#hero" ref={inViewRef}>
 						<svg
 							width="165"
 							height="50"
@@ -61,7 +65,7 @@ const Footer = () => {
 						{socialMedia.map((icon) => (
 							<div
 								key={icon.alt}
-								className="flex justify-center items-center w-12 h-12 bg-white rounded-full"
+								className="flex justify-center items-center w-12 h-12 bg-white rounded-full hover:scale-110"
 							>
 								<a href={icon.link} target="_blank" rel="noreferrer">
 									<img src={icon.src} alt={icon.alt} height={24} width={24} />
@@ -102,7 +106,12 @@ const Footer = () => {
 						Flexa, Inc. All Rights Reserved
 					</p>
 				</div>
-				<p className="font-montserrat cursor-pointer">Terms & Conditions</p>
+				<p
+					className="font-montserrat cursor-pointer hover:text-coral-red"
+					onClick={handleClick}
+				>
+					Terms & Conditions
+				</p>
 			</div>
 		</footer>
 	);
